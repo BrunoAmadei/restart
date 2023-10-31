@@ -1,16 +1,23 @@
-import { useState } from "react";
+import React, { useState } from "react"
 
 function calculadoraIMC() {
-  const [peso, setPeso] = useState(0)
-  const [altura, setAltura] = useState(0)
+  const [peso, setPeso] = useState("")
+  const [altura, setAltura] = useState("")
+  const [resultado, setResultado]= useState("")
+
+  const calculoImc = () => {
+    const imc = peso / (altura * altura)
+    const resultado = imc.toFixed(2)
+    setResultado(resultado)
+  }
 
   return (
     <div>
-      <input type="number" placeholder="Peso (Kg)" />
-      <input type="number" placeholder="Altura (m)" />
-      <button>Calcular</button>
+      <input type="number" placeholder="Peso(Kg)" onChange={(e) => setPeso(e.target.value)} />
+      <input type="number" placeholder="Altura(m)" onChange={(e) => setAltura(e.target.value)} />
+      <button onClick={calculoImc}>Calcular</button>
       <p>
-        Aqui ficará o IMC.
+       {resultado}
       </p>
     </div>
   )
