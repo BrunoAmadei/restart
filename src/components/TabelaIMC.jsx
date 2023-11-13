@@ -1,8 +1,35 @@
 import React from "react";
 
-function TabelaImc() {
+function TabelaImc({resultado}) {
+
+    const corDeFundo = (imc) => {
+        if (imc < 16.9) {
+          return "purple"; // Muito abaixo do peso
+        } else if (imc >= 17 && imc < 18.5) {
+          return "blue"; // Abaixo do peso
+        } else if (imc >= 18.5 && imc < 25) {
+          return "green"; // Peso ideal
+        } else if (imc >= 25 && imc < 30) {
+          return "yellow"; // Acima do peso
+        } else if (imc >= 30 && imc < 35) {
+          return "orange"; // Obesidade grau I
+        } else if (imc >= 35 && imc <= 40) {
+          return "red"; // Obesidade grau II
+        } else {
+          return "darkred"; // Obesidade grau III
+        }
+      };
+
     return (
-        <table>
+        <table
+        style={{
+            bacgroundColor: corDeFundo(parseFloat(resultado)),
+            padding: "10px",
+            marginTop: "20px",
+            borderRadius: "5px",
+        }}
+        
+        >
             <tr>
                 <th>IMC (Kg/m2)</th>
                 <th>Classificação</th>

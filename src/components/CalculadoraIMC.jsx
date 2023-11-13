@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
-function calculadoraIMC() {
+function calculadoraIMC({setResultado}) {
+  
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [resultado, setResultado]= useState("");
