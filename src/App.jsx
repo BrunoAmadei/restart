@@ -1,12 +1,7 @@
-import React, {useState} from "react"
 import CalculadoraIMC from "./components/CalculadoraIMC"
-import TabelaImc from "./components/TabelaIMC"
 import "./app.css"
 
 function App() {
-
-  const [resultado, setResultado] = useState("") 
-
   return (
     <main className="container">
       <div>
@@ -20,8 +15,7 @@ function App() {
         </span>
         <h3>Calcule aqui seu IMC</h3>
       </div>
-      <CalculadoraIMC setResultado={setResultado}/>
-      {resultado && <TabelaImc resultado={resultado}/>}
+      <CalculadoraIMC />
     </main>
   )
 }
