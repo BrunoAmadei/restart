@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 
 function calculadoraIMC() {
-  const [peso, setPeso] = useState("")
-  const [altura, setAltura] = useState("")
-  const [resultado, setResultado]= useState("")
+  const [peso, setPeso] = useState("");
+  const [altura, setAltura] = useState("");
+  const [resultado, setResultado]= useState("");
 
   const calculoImc = () => {
-    const imc = peso / (altura * altura)
-    const resultado = imc.toFixed(2)
-    setResultado(resultado)
+    const imc = peso / (altura * altura);
+    const resultado = imc.toFixed(2);
+    setResultado(resultado);
   }
 
   return (
